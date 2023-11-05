@@ -11,6 +11,7 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
+    public Text BestScoreText;
     public GameObject GameOverText;
     
     private bool m_Started = false;
@@ -18,7 +19,7 @@ public class MainManager : MonoBehaviour
     
     private bool m_GameOver = false;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +67,11 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
+    }
+
+    public int GetPoints()
+    {
+       return m_Points;
     }
 
     public void GameOver()
